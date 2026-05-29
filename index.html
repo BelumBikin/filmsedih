@@ -1,13 +1,161 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Film Website</title>
-</head>
-<body style="background:black; color:white; font-family:Arial;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Film Site</title>
 
-  <h1>GitHub Pages Active</h1>
-  <p>Kalau ini muncul, berarti website sudah hidup</p>
+<style>
+
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  font-family:Arial, sans-serif;
+}
+
+/* HOME */
+.home{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:50px;
+}
+
+.wrap{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  max-width:1200px;
+  width:100%;
+}
+
+/* LOGO */
+.logo{
+  width:60px;
+}
+.logo img{
+  width:100%;
+}
+
+/* LAYOUT */
+.main{
+  display:flex;
+  gap:40px;
+}
+
+/* CAROUSEL */
+.carousel{
+  flex:1;
+  aspect-ratio:16/9;
+  position:relative;
+  overflow:hidden;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  animation:fade 18s infinite;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(100%);
+  transition:.4s;
+}
+
+.carousel:hover img{
+  filter:grayscale(0%);
+}
+
+.slide:nth-child(1){animation-delay:0s;}
+.slide:nth-child(2){animation-delay:6s;}
+.slide:nth-child(3){animation-delay:12s;}
+
+@keyframes fade{
+  0%{opacity:0;}
+  10%{opacity:1;}
+  33%{opacity:1;}
+  43%{opacity:0;}
+  100%{opacity:0;}
+}
+
+/* MENU */
+.menu{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.menu a{
+  color:#fff;
+  text-decoration:none;
+  letter-spacing:3px;
+  font-size:13px;
+  opacity:.8;
+  transition:.3s;
+}
+
+.menu a:hover{
+  opacity:.4;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .main{
+    flex-direction:column;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="home">
+
+  <div class="wrap">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="https://blogger.googleusercontent.com/img/a/YOUR-LOGO">
+    </div>
+
+    <div class="main">
+
+      <!-- CAROUSEL -->
+      <div class="carousel">
+
+        <div class="slide">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTdRnaUR7R_FPpxR8ofU5RncGqJzCR3ac1muwNFldLvuk6U_NQO4RsRaP8dgGstAC470eCoBjX3-dycRMuOvSFbI7kJhTCuUe4joeUo8McPVueA78lDJlE4398Fb3uH5yoHduy0xUUvtu_dVWIixgIkJpQDi8nsd1OAwy3DKffT3jyIPab-DwUhEZf/w4000/Still%201(1).png">
+        </div>
+
+        <div class="slide">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9-pYPdEKz_cSSbdm1LkN4-LyQlaopPEwuBSok72SS5V_7lOt8zMjO7GcwULxRbiF8R3WirTqkrjvyC30-cYEn0UD2TCmxoMutxPhcyAxvXZQwtvjKh-SGJlMreMKFSHEGS9j1DVR2jDfwSwAQsiI5LlPRsBsFaWtlfN7UcKsT9US-_GacpUQcINWb/w4000/KKML__1.14.2.jpg">
+        </div>
+
+        <div class="slide">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBWSDVgK0YjN9ibYfeqp1XeInqhnjSdVHQ_TSsuFTxq1K30rVXHsN5-T-_LMMplsF1uXARMP_zageoUbINzCISH3lAwCg7Q0PTD5TbB1IMTeGhcIKKOJXlbeHOMp_sB_1g1QGwNotDadBHqqXmu5XPTk-gAkSH_TXsWEFnOY0S-c1rESKviZT4yudC/w4000/Still%201%20-%20Berbagi%20Hati.jpg">
+        </div>
+
+      </div>
+
+      <!-- MENU -->
+      <nav class="menu">
+        <a href="about.html">About</a>
+        <a href="films.html">Films</a>
+        <a href="archive.html">Archive</a>
+      </nav>
+
+    </div>
+
+  </div>
+
+</div>
 
 </body>
 </html>
